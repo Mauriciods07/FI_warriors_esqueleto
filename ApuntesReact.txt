@@ -47,3 +47,21 @@ npm i @material-ui/core @material-ui/icons
 	<Grid item xs={12} sm={6} md={4} lg={3}> /* Cuando la pantalla sea pequeña (xs), queremos que el elemento (tarjeta) ocupe todo {12}; un poco más grande (sm), la mitad de la pantalla {6};
 							más grande (md), un tercio de la pantalla {4} y cuando la pantalla sea grande (lg), quepan 4 elementos {3}*/
 
+**product-data.js
+  NOTA: la ruta del la imagen no sirve, se debe importar desde la cabecera, corregir esto.
+
+**CheckoutPage.js - Recoge todos los productos que se van a comprar
+  - Línea 40: FromRow es un Grid anidado. La función se encuentra en la línea 19 en donde se llaman a los items de la lista de productos
+
+**StateProvider.js
+  - contiene basket[{}, {}] - la función enviará los productos elegidos al carrito de compra 
+
+Instalar react router para poder crear enlaces entre páginas (como anchor en html)
+npm i react-router-dom
+
+En la página principal, App.js, se crean las rutas:
+	<Switch>			// Switch de Route-react
+            <Route path="/">		// Si se está en la página principal
+                <Products/>		// dirige a Products
+            </Route>
+	</Switch>
