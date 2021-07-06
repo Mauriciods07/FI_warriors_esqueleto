@@ -1,15 +1,26 @@
 import Product from "./components/Product"
 import './App.css';
 import Navbar from "./components/Navbar";
-import Products from "./components/Products"
+import Products from "./components/Products";
+import CheckoutCard from "./components/CheckoutCard";
+import CheckoutPage from "./components/CheckoutPage";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Products/>
-      {/* <Product/> */}
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar/>
+        <Switch>
+          <Route path="/checkout-page">
+            <CheckoutPage/>
+          </Route>
+          <Route path="/">
+            <Products/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

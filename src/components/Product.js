@@ -57,7 +57,7 @@ export default function Product({product : {id, name, productType, image, price,
           </Typography>
         }
         title={name}
-        subheader="Disponible"
+        subheader={measure}
       />
       <CardMedia
         className={classes.media}
@@ -70,7 +70,7 @@ export default function Product({product : {id, name, productType, image, price,
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label='Add to Cart'>
+        <IconButton aria-label='Add to Cart' onClick={addToBasket}>
           <AddShoppingCart fontSize='large' /> 
         </IconButton>
         {Array(rating)
