@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import logo from "../images/logo.png";
 import { ShoppingCart } from '@material-ui/icons'
+import { Badge } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,6 +40,7 @@ export default function Navbar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <img src={logo} className={classes.image}/>
           </IconButton>
+          <div className={classes.grow} />
           <Typography variant="h6" component="p">
             Hola, Usuario
           </Typography>
@@ -47,7 +49,9 @@ export default function Navbar() {
               <strong>Registrarse</strong>
               </Button>
           <IconButton aria-label="show cart items" color="inherit">
-              <ShoppingCart fontSize="large" color="primary"/>
+              <Badge badgeContent={3} color="secondary">
+                <ShoppingCart fontSize="large" color="primary"/>
+              </Badge>
           </IconButton>
           </div>
         </Toolbar>

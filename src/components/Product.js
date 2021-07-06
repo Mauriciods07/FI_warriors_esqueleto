@@ -10,7 +10,6 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import cafe from "../images/cafe_grano.jpg";
 import { AddShoppingCart } from '@material-ui/icons';
 import accounting from "accounting";
 
@@ -37,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Product() {
+export default function Product({product : {id, name, productType, image, price, rating, description, measure}}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -54,27 +53,27 @@ export default function Product() {
             variant='h5'
             color='textSecondary'
           >
-            {accounting.formatMoney(50)}
+            {accounting.formatMoney(price)}
           </Typography>
         }
-        title="Café de grano"
+        title={name}
         subheader="Disponible"
       />
       <CardMedia
         className={classes.media}
-        image={cafe}
-        title="Café de grano"
+        image={image}
+        title={name}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-            Café de grano
+            {productType}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label='Add to Cart'>
           <AddShoppingCart fontSize='large' /> 
         </IconButton>
-        {Array(4)
+        {Array(rating)
           .fill()
           .map((_, i) => (
             <p>&#11088;</p>
@@ -92,7 +91,7 @@ export default function Product() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Este es café de grano bien bueno.</Typography>
+          <Typography paragraph>{description}</Typography>
         </CardContent>
       </Collapse>
     </Card>

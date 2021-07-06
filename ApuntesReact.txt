@@ -1,0 +1,49 @@
+Comenzar el proyecto
+npm create-react-app <ruta_del_proyecto>
+npm start
+
+Se iniciará el servidor 3000
+
+Limpiar el documento
+- ./Public/ - logos
+- ./src/ - logo y tests, en App.js, borrar el primer import y el <header>
+
+Para obtener plantillas: material-ui.com
+En este caso, usamos Components -> Surfaces -> Cards
+Estas son las tarjetas de los productos
+
+Si sale error, importar 
+npm i @material-ui/core @material-ui/icons
+
+**En Product.js, en la función Product(), se coloca la información de las tarjetas
+  - En línea 75, se añade el icono de carrito <AddShoppingCart fontSize='large' />
+  - Dos líneas después, las estrellas están como:
+	{Array(rating) // rating es la variable de cuántas estrellas tiene el producto 1-5
+	  .fill()
+	  .map((_, i) => (
+	    <p>&#11088;<p/> // este código representa la estrella
+	  ))}
+  - La función acepta un parámetro (cada elemento del array product-data.js), el cual está descompuesto en la información contenida en la tarjeta:
+	* id: id del producto
+	* name: nombre del producto
+	* productType: Descripción debajo de la imagen
+	* image: imagen del producto
+	* price: precio del producto
+	* rating: estrellitas del producto
+	* description: Descripción del desplegable
+	* measure: la medida del producto (kg o lt)
+	** puede ser que la información todavía se pueda adaptar más
+
+  Librería para dar formato a los números (precios): npm accounting
+  npm i accounting
+  Y usar como
+  accounting.formatMoney(cantidad, signo) // por defecto, el signo viene como dólares ($), pero se pueden usar otros
+
+**Navbar.js es la barra de navegación simple (obtenida de marterial-ui.com)
+  - Badge: envolver el icono del carrito en el badge para hacerlo interactivo y ponga un numerito cuando se agregue un producto
+
+**Products.js
+  - Usa Grids con Breakpoints para que las tarjetas se ajusten a la pantalla del dispositivo
+	<Grid item xs={12} sm={6} md={4} lg={3}> /* Cuando la pantalla sea pequeña (xs), queremos que el elemento (tarjeta) ocupe todo {12}; un poco más grande (sm), la mitad de la pantalla {6};
+							más grande (md), un tercio de la pantalla {4} y cuando la pantalla sea grande (lg), quepan 4 elementos {3}*/
+
