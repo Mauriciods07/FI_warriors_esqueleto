@@ -9,7 +9,7 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="App">
+    <div className="App">
         <Navbar/>
         <Switch>
           <Route path="/checkout-page">

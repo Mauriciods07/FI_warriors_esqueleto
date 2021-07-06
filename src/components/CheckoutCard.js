@@ -9,6 +9,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import accounting from "accounting";
 import DeleteIcon from '@material-ui/icons/Delete';
+import {useStateValue} from "../StateProvider"
+import { actionTypes } from '../reducer';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,8 +34,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function CheckoutCard({product : {id, name, productType, image, price, rating, description, measure}}) {
+export default function CheckoutCard({
+  product : {id, name, productType, image, price, rating, description, measure}
+}) {
   const classes = useStyles();
+  const [{basket}, dispatch] = useStateValue();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -68,7 +74,7 @@ export default function CheckoutCard({product : {id, name, productType, image, p
             ))}
         </div>
         <IconButton>
-            <DeleteIcon fontSize='large'/>
+            <DeleteIcon fontSize='large' onClick={removeItem}/>
         </IconButton>
       </CardActions>
     </Card>
