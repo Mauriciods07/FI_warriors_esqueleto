@@ -32,7 +32,7 @@ function App() {
     <Router>
     <div className="App">
         <Navbar/>
-        <Carousel/>
+        
            <Switch>
                   
                 <Route path="/signup">
@@ -48,6 +48,7 @@ function App() {
                   </Route>
                   
                   <Route path="/">
+                    <Carousel/>
                     <Products/>
                   </Route>
            </Switch>

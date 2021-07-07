@@ -22,12 +22,14 @@ const geolocalizar = (setState) => {
 
 const GeoData = ({ state }) => {
   console.log(state);
-  if (state.latitude != 0 && state.longitude != 0) {
+  var a = state.latitude;
+  var b = state.longitude;
+  if (a != 0 && b != 0) {
     return (
       <>
         <p>Geolocation</p>
-        <p>Latitude: {state.latitude}</p>
-        <p>longitude: {state.longitude}</p>
+        <p>Latitude: {a}</p>
+        <p>longitude: {b}</p>
       </>
     );
   } else {
