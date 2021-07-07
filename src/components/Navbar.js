@@ -17,8 +17,6 @@ import Home from "./ubicacion";
 import SearchIcon from "@material-ui/icons/Search";
 
 
-import SearchIcon from "@material-ui/icons/Search";
-import Ubicacion from "./ubicacion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
   },
   searchInput: {
     width: "200px",
-    margin: "5px",
   }
 }));
 
@@ -99,9 +96,6 @@ export default function Navbar() {
           </Link>
           <Home />
 
-          <div>
-            <Ubicacion/>
-          </div>
           <div className={classes.searchContainer}>
             <SearchIcon className={classes.searchIcon} />
             <TextField 
@@ -128,11 +122,6 @@ export default function Navbar() {
                       <ShoppingCart fontSize="large" color="primary"/>
                     </Badge>
                 </IconButton>
-              <IconButton aria-label="show cart items" color="inherit">
-                <Badge badgeContent={3} color="secondary">
-                  <ShoppingCart fontSize="large" color="primary"/>
-                </Badge>
-            </IconButton>
               </Link>
           </div>
         </Toolbar>

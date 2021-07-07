@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { AddLocation } from "@material-ui/icons";
-import IconButton from '@material-ui/core/IconButton';
 
 const geolocalizar = (setState) => {
   navigator.geolocation.getCurrentPosition(
@@ -24,15 +22,18 @@ const geolocalizar = (setState) => {
 
 const GeoData = ({ state }) => {
   console.log(state);
-  if (state.latitude != 0 && state.longitude != 0) {
+  var a = state.latitude;
+  var b = state.longitude;
+  if (a != 0 && b != 0) {
     return (
       <>
-        <p>Latitude: {state.latitude}</p>
-        <p>longitude: {state.longitude}</p>
+        <p>Geolocation</p>
+        <p>Latitude: {a}</p>
+        <p>longitude: {b}</p>
       </>
     );
   } else {
-    return <div>No se ha geolocalizado</div>;
+    return <div></div>;
   }
 };
 
@@ -43,8 +44,8 @@ const Home = () => {
   });
 
   return (
-    <div>     
-      <IconButton
+    <div>
+      <Button
         variant="contained"
         color="primary"
         onClick={() => {
@@ -52,14 +53,11 @@ const Home = () => {
         }}
       >
         Geolocalizar
-      
-        <AddLocation/>
-      </IconButton>
+      </Button>
 
       <GeoData state={state} />
     </div>
   );
 };
 
-export default Home;
 export default Home;

@@ -28,7 +28,6 @@ export default function Products() {
           ))
         }
       </Grid>
-      <div w3-include-html="chat.html"></div>
     </div>
   );
 }
