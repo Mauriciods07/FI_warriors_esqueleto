@@ -27,6 +27,10 @@
     <title>React App</title>
   </head>
   <body>
+    <style>
+			.rw-conversation-container .rw-header{background-color: #1EA64B;}
+      .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: #1EA64B;}
+		</style>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -39,5 +43,29 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      (function (){ 
+      let e = document.createElement("script"),
+				t = document.head || document.getElementsByTagName("head")[0];
+				(e.src =
+					"https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+				(e.async = !0),
+				(e.onload = () => {
+					window.WebChat.default(
+					{
+						// initPayload: '/greet', // para que el chatbot inicie la conversación
+						customData: { language: "en" },
+						// socketUrl: "https:bf-botfront.development.agents.botfront.cloud",
+						socketUrl: "http://localhost:5005",
+						title: 'Chatbot',
+						subtitle: '¡Di "hola" para empezar!'
+						// add other props here
+					},
+					null
+					);
+				}),
+				t.insertBefore(e, t.firstChild);
+			})();
+    </script>
   </body>
 </html>
