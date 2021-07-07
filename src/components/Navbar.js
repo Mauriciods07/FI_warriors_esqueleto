@@ -55,9 +55,12 @@ export default function Navbar() {
             Hola, Usuario
           </Typography>
           <div className={classes.button}>
+            <Link to="/signin">
               <Button variant="contained" color="primary">
-              <strong>Registrarse</strong>
-              </Button>
+                <strong>Registrarse</strong>
+                </Button>
+            </Link>
+              
               <Link to="checkout-page">
                 <IconButton aria-label="show cart items" color="inherit">
                     <Badge badgeContent={basket?.length} color="secondary">

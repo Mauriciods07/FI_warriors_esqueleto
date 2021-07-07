@@ -65,3 +65,6 @@ En la página principal, App.js, se crean las rutas:
                 <Products/>		// dirige a Products
             </Route>
 	</Switch>
+
+**Se instalara Firebase
+npm i firebase
