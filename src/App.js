@@ -12,6 +12,7 @@ import { auth } from "./firebase";
 import { actionTypes } from "./reducer";
 import {useStateValue} from "./StateProvider"
 import Carousel from "./components/Carousel"
+import Home from "./components/ubicacion";
 
 function App() {
   const [{user}, dispatch] = useStateValue();
@@ -31,7 +32,9 @@ function App() {
     <Router>
     <div className="App">
         <Navbar/>
+        <Carousel/>
            <Switch>
+                  
                 <Route path="/signup">
                     <SignUp/>
                   </Route>

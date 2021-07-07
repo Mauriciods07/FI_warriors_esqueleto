@@ -13,6 +13,7 @@ import {useStateValue} from "../StateProvider"
 import { auth } from '../firebase';
 import { actionTypes } from '../reducer';
 import { useHistory } from 'react-router-dom';
+import Home from "./ubicacion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,6 +70,7 @@ export default function Navbar() {
               />
             </IconButton>
           </Link>
+          <Home />
           <div className={classes.grow} />
           <Typography variant="h6" component="p">
             Hola, {user ? user.email : "Usuario"}
