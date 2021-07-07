@@ -45,6 +45,11 @@ export default function CheckoutCard({
     setExpanded(!expanded);
   };
 
+  const removeItem = () =>dispatch({
+    type: actionTypes.REMOVE_ITEM,
+    id: id,
+  })
+
   return (
     <Card className={classes.root}>
       <CardHeader
