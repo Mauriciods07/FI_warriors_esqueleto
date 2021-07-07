@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { auth } from "./firebase";
 import { actionTypes } from "./reducer";
 import {useStateValue} from "./StateProvider"
+import Carousel from "./components/Carousel"
 
 function App() {
   const [{user}, dispatch] = useStateValue();
@@ -30,25 +31,25 @@ function App() {
     <Router>
     <div className="App">
         <Navbar/>
-        <Switch>
+           <Switch>
+                <Route path="/signup">
+                    <SignUp/>
+                  </Route>
+                  
+                  <Route path="/signin">
+                    <SignIn/>
+                  </Route>
+                  
+                  <Route path="/checkout-page">
+                    <CheckoutPage/>
+                  </Route>
+                  
+                  <Route path="/">
+                    <Products/>
+                  </Route>
+           </Switch>
 
-        <Route path="/signup">
-            <SignUp/>
-          </Route>
-
-          <Route path="/signin">
-            <SignIn/>
-          </Route>
-
-          <Route path="/checkout-page">
-            <CheckoutPage/>
-          </Route>
-
-          <Route path="/">
-            <Products/>
-          </Route>
-
-        </Switch>
+        
       </div>
     </Router>
   );
